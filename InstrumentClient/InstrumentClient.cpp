@@ -33,6 +33,7 @@ unique_ptr<BPatch_addressSpace>
 InstrumentClient::initInstrumenter(
         const string& programName,
         const string& rompLibPath) {
+  bpatchPtr_->setRelocateJumpTable(true);
   auto handle = bpatchPtr_->openBinary(programName.c_str(), true);
   if (!handle) {
     LOG(FATAL) << "cannot open binary: " << programName;    

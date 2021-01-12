@@ -125,10 +125,10 @@ ompt_start_tool_result_t* ompt_start_tool(
   }
   auto appPath = std::string(result, count);
   LOG(INFO) << "ompt_start_tool on executable: " << appPath;
-  auto success = Dyninst::SymtabAPI::Symtab::openFile(gSymtabHandle, appPath);
-  if (!success) {
-    LOG(FATAL) << "cannot parse executable into symtab: " << appPath;
-  }
+  //auto success = Dyninst::SymtabAPI::Symtab::openFile(gSymtabHandle, appPath);
+  //if (!success) {
+  //  LOG(FATAL) << "cannot parse executable into symtab: " << appPath;
+  //}
   return &startToolResult;
 }
 
